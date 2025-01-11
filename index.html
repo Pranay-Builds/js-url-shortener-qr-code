@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener and QR Code Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <!-- Main Container -->
+    <div class="bg-white shadow-md rounded-lg p-8 max-w-lg w-full flex flex-col items-center">
+        <!-- Title and Description -->
+        <h1 class="text-center text-gray-800 text-3xl font-bold mb-4">URL Shortener and QR Code Generator</h1>
+        <p class="text-center text-gray-800 font-semibold">Simply enter a URL and get a shortened version of it along
+            with a QR code.</p>
+
+        <div class="mb-4 mt-3">
+            <input id="url-input" type="text" class="border border-gray-400 p-2 w-full rounded-lg"
+                placeholder="Enter URL">
+        </div>
+
+        <button id="shortenBtn" class="bg-blue-500 px-4 py-2 text-white font-bold rounded-xl hover:bg-blue-600">Shortern URL</button>
+        <p id="errorMessage" class="text-red-500 text-center mt-2"></p>
+        <!-- Results Section -->
+        <div id="results-section" class="mt-6 hidden">
+            <!-- Shortened URL -->
+            <div class="bg-gray-100 p-4 rounded-lg mb-4 flex justify-between items-center">
+                <span id="shortened-url" class="text-blue-500"></span>
+                <button id="copy-btn" class="bg-blue-600 text-white font-bold p-2 rounded-lg ml-5 hover:bg-blue-700">Copy</button>
+            </div>
+
+            <!-- QR Code Display -->
+            <div class="text-center flex flex-col items-center justify-center">
+                <h2 class="text-lg font-semibold text-gray-800 mb-2">QR Code:</h2>
+                <div id="qrcode" class="inline-block border p-4 bg-gray-50"></div>
+                <button id="download-btn"
+                    class="bg-yellow-500 text-white px-4 py-2 mt-4 rounded-lg hover:bg-yellow-600">Download QR
+                    Code</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
